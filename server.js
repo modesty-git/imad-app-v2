@@ -6,19 +6,19 @@ var app = express();
 app.use(morgan('combined'));
 
 var articles = {
-var articleOne: {
+  articleOne: {
   title: 'articleOne',
   heading: 'Article One',
   date: 'Feb 26, 2017',
   content: `<p>This is the content of first article.This is the content of first article.This is the content of first article.This is the content of first article.</p>`
 },
-var articleTwo: {
+  articleTwo: {
   title: 'articleTwo',
   heading: 'Article Two',
   date: 'Feb 26, 2017',
   content: `<p>This is the content of first article.This is the content of first article.This is the content of first article.This is the content of first article.</p>`
 },
-var articleThree: {
+  articleThree: {
   title: 'articleThree',
   heading: 'Article Three',
   date: 'Feb 26, 2017',
