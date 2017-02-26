@@ -6,20 +6,19 @@ var app = express();
 app.use(morgan('combined'));
 
 var articles = {
-  article-One:
-  {
+  articleOne: {
   title: 'articleOne',
   heading: 'Article One',
   date: 'Feb 26, 2017',
   content: `<p>This is the content of first article.This is the content of first article.This is the content of first article.This is the content of first article.</p>`
   },
-  article-Two: {
+  articleTwo: {
   title: 'articleTwo',
   heading: 'Article Two',
   date: 'Feb 26, 2017',
   content: `<p>This is the content of first article.This is the content of first article.This is the content of first article.This is the content of first article.</p>`
   },
-  article-Three: {
+  articleThree: {
   title: 'articleThree',
   heading: 'Article Three',
   date: 'Feb 26, 2017',
@@ -70,7 +69,7 @@ app.get('/', function (req, res) {
 app.get('/:articleName', function(req, res) {
     // articleName == article-one :articleName means (root match) article name will be article-one ; it will convert it into var
     //articles[articlesname] == {} content object for article-one
-    var articleName = req.m.articleName
+    var articleName = req.params.articleName;
     res.send(createTemplate(articles[articleName]));
 });
 
