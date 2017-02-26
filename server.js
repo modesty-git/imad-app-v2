@@ -12,15 +12,15 @@ var articleOne: {
   date: 'Feb 26, 2017',
   content: `<p>This is the content of first article.This is the content of first article.This is the content of first article.This is the content of first article.</p>`
 },
-var articleOne: {
+var articleTwo: {
   title: 'articleTwo',
   heading: 'Article Two',
   date: 'Feb 26, 2017',
   content: `<p>This is the content of first article.This is the content of first article.This is the content of first article.This is the content of first article.</p>`
 },
 var articleThree: {
-  title: 'articleOne',
-  heading: 'Article One',
+  title: 'articleThree',
+  heading: 'Article Three',
   date: 'Feb 26, 2017',
   content: `<p>This is the content of first article.This is the content of first article.This is the content of first article.This is the content of first article.</p>`
 },
@@ -66,8 +66,10 @@ app.get('/', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'index.html'));
 });
 
-app.get('/article-one', function(req, res) {
-    res.send(createTemplate(articleOne));
+app.get('/articleName', function(req, res) {
+    // articleName == srticle-one
+    //
+    res.send(createTemplate(articles[articlesname]));
 });
 
 app.get('/article-two', function(req, res){
