@@ -4,7 +4,7 @@ var path = require('path');
 
 var app = express();
 app.use(morgan('combined'));
-//object articles having three article objects
+
 var articles = {
   article-One: {
   title: 'articleOne',
@@ -69,7 +69,8 @@ app.get('/', function (req, res) {
 app.get('/:articleName', function(req, res) {
     // articleName == article-one :articleName means (root match) article name will be article-one ; it will convert it into var
     //articles[articlesname] == {} content object for article-one
-    res.send(createTemplate(articles[articlesname]));
+    var articleName = req.m.articleName
+    res.send(createTemplate(articles[articleName]));
 });
 
 
